@@ -150,7 +150,9 @@ elif camera is not None:
 if img_bytes is None:
     st.info("Здесь появится результат после загрузки фото.")
 else:
-    st.image(Image.open(io.BytesIO(img_bytes)).convert("RGB"), use_container_width=True)
+    st.image(
+        Image.open(io.BytesIO(img_bytes)).convert("RGB"), width="stretch"
+    )
 
     with st.spinner("Распознаю..."):
         try:

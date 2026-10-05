@@ -163,18 +163,8 @@ else:
 
     if probs is not None:
         idx = int(np.argmax(probs))
-        conf = probs[idx] * 100
 
-        st.success(f"**{CLASS_NAMES[idx]}** — уверенность {conf:.1f}%")
-        st.progress(min(conf / 100.0, 1.0), text=f"Уверенность: {conf:.1f}%")
-
-        st.markdown("**Вероятности классов**")
-        for i in sorted(range(len(CLASS_NAMES)), key=lambda i: -probs[i]):
-            st.progress(
-                min(probs[i], 1.0),
-                text=f"{CLASS_NAMES[i]} — {probs[i] * 100:.1f}%",
-            )
+        st.markdown(f"## {CLASS_NAMES[idx]}")
 
         with st.expander("Краткая информация", expanded=True):
-            st.markdown(f"**{CLASS_NAMES[idx]}**")
             st.markdown(CLASS_INFO[idx])

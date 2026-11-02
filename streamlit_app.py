@@ -426,17 +426,19 @@ def predict(image_bytes: bytes):
     return [float(p) for p in preds]
 
 
-with st.sidebar:
-    lang = st.radio(
-        "Язык / Мова / Language",
-        options=["ru", "be", "en"],
-        format_func=lambda c: LANG_LABELS[c],
-        key="lang",
-    )
+st.markdown(MOBILE_CSS, unsafe_allow_html=True)
+
+lang = st.radio(
+    "Язык / Мова / Language",
+    options=["ru", "be", "en"],
+    format_func=lambda c: LANG_LABELS[c],
+    key="lang",
+    horizontal=True,
+    label_visibility="collapsed",
+)
 
 L = LANGS[lang]
 
-st.markdown(MOBILE_CSS, unsafe_allow_html=True)
 st.title(L["title"])
 st.markdown(L["description"])
 

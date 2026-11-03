@@ -373,7 +373,7 @@ st.set_page_config(
 
 MOBILE_CSS = """
 <style>
-.block-container {max-width: 760px; padding-top: 1rem; padding-bottom: 1rem;}
+.block-container {max-width: 760px; padding-top: 4rem; padding-bottom: 1rem;}
 h1 {font-size: 1.7rem !important;}
 h1, h2, h3 {font-family: inherit;}
 [data-testid="stButton"] button {min-height: 46px; width: 100%; font-size: 1rem;}
